@@ -1,0 +1,33 @@
+<section class="page_header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center"></div>
+    </div>
+  </div>
+</section>
+
+<section class="subscribe">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Recuperar</h1>
+        <p>Ingresa el correo del Usuario registrado.</p>
+        <form [formGroup]="form" (ngSubmit)="submit()">
+          <div class="form-group">
+            <input
+            type="email"
+            class="form-control"
+            id="email"
+            formControlName="email"
+            placeholder="Correo"
+          />
+          </div>
+          <button type="submit" class="btn btn-default">
+            <i class="fa fa-angle-right"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+ 

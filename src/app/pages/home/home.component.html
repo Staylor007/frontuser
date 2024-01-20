@@ -1,0 +1,36 @@
+<section class="page_header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="team">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="page-header wow fadeInDown">
+            <h1>
+             Nuestros Bares                
+            </h1>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        
+        <div class="col-md-3 col-sm-6 text-center"  *ngFor="let lista of list">
+          <div class="team-staff wow fadeInUp" data-wow-delay="0.2s">
+            <a routerLink="/bar/{{lista.id_bar}}"><img
+              src="{{env + lista.imagen}}"
+              class="img-responsive center-block"
+              alt style="width:262px; height: 177px;"
+            />
+            <h4>{{lista.nombre_bar}}</h4> 
+            </a>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,112 @@
+<section class="page_header">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+        </div>
+      </div>
+    </div>
+  </section>
+<section class="shop-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="billing-details">
+              <h3 class="text-left">Perfil</h3>
+              <br /> 
+              <form [formGroup]="form" (ngSubmit)="add()">
+                <label class>Country </label>
+                <select id="id_pais" class="form-control" formControlName="id_pais">
+                  <option value="" disabled selected>--Selecciona un Pais</option>
+                  <option *ngFor="let pais of paises" [value]="pais.id_pais">{{ pais.nombre_pais }}</option>
+                </select>
+                
+                <div class="row">
+                  <div class="col-md-6">
+                    <label>Provincia</label>
+                    <select id="id_provincia" class="form-control" formControlName="id_provincia">
+                      <option value="" disabled selected>--Selecciona una Provincia</option>
+                      <option *ngFor="let provincia of provincias" [value]="provincia.id_provincia">{{ provincia.nombre_provincia}}</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label>Ciudad </label>
+                    <select id="id_ciudad" class="form-control" formControlName="id_ciudad">
+                      <option value="" disabled selected>--Selecciona una Ciudad</option>
+                      <option *ngFor="let ciudad of ciudades" [value]="ciudad.id_ciudad">{{ ciudad.nombre_ciudad}}</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="clearfix space20"></div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <label>Nombre</label>
+                    <input class="form-control" placeholder value type="text" formControlName="nombre" />
+                  </div>
+                  <div class="col-md-6">
+                    <label>Apellido </label>
+                    <input class="form-control" placeholder value type="text" formControlName="apellido"/>
+                  </div>
+                </div>
+                <div class="clearfix space20"></div>
+                <label>Usuario</label>
+                <input class="form-control" placeholder value type="text" formControlName="usuario" />
+                <div class="clearfix space20"></div>
+                <label>Email </label>
+                <input
+                  class="form-control"
+                  placeholder="email"
+                  value
+                  type="text"
+                  formControlName="correo"
+                />
+                
+                <div class="clearfix space20"></div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <label>Cedula </label>
+                    <input
+                      class="form-control"
+                      placeholder="CI:"
+                      value
+                      type="text"
+                      formControlName="cedula"
+                    />
+                  </div>
+                  <div class="col-md-4">
+                    <label>Direccion</label>
+                    <input
+                      class="form-control"
+                      value
+                      placeholder="Direccion"
+                      type="text"
+                      formControlName="direccion"
+                    />
+                  </div>
+                  <div class="col-md-4">
+                    <label>Telefono </label>
+                    <input
+                      class="form-control"
+                      placeholder="Telefono"
+                      value
+                      type="text"
+                      formControlName="telefono"
+                    />
+                  </div>
+                </div>     
+                <div class="form-group row">
+                    <div class="offset-sm-2 col-sm-10">
+                      <button type="submit" class="btn btn-success">Guardar</button>
+                    </div>
+                  </div>          
+              </form>
+            </div>
+          </div> 
+        </div> 
+      </div>
+    </div>
+  </div>
+</section>
+ 

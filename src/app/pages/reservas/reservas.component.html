@@ -1,0 +1,90 @@
+
+<section class="page_header">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="shop-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Reservas</h3>
+          <br />
+          <table class="cart-table account-table table table-bordered">
+            <thead>
+              <tr>
+                <th>Order</th>
+                <th>Fecha</th>
+                <th>Estado</th>    
+                <th>Tiempo</th>               
+                <th></th>
+              </tr>
+            </thead>
+            <tbody  *ngFor="let lista of list">
+              <tr>
+                <td>{{lista.codigo_estado}}</td>
+                <td>{{lista.fecha_reserva | date:'yyyy-MM-dd' }}</td>
+                <td>{{lista.estado}}</td>
+                <td>{{lista.tiempoRestante}}</td>
+                <td>
+                     <button (click)="detalle(lista.id_reserva!)" type="button" class="btn btn-info btn-sm ms-2" data-toggle="modal" data-target="#exampleModal">
+                        Pedido
+                      </button>                
+                </td>
+              </tr> 
+            </tbody>
+          </table>
+          <br />
+          <br />
+          <br /> 
+        </div>
+      </div>
+    </div> 
+      
+  </section>
+
+   <!-- Modal -->
+   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Detalle de Reserva</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <table id="detalle" class="table table-bordered table-hover dataTable dtr-inline" role="grid" aria-describedby="example2_info">
+                <thead>
+                <tr role="row">
+                  <th>Pedido</th>  
+                  <th>Menu</th>  
+                  <th>Cantidad</th>  
+                  <th>Precio Unitario</th>  
+                  <th>Subtotal</th> 
+                </thead>
+                <tbody>  
+                  <tr *ngFor="let item of dat" class="table-light">
+                    <td>{{item.plato}}</td>
+                    <td>{{item.nombre_menu}}</td>
+                    <td>{{item.cantidad }}</td>
+                    <td>{{item.precio_unitario}}$</td>
+                    <td>{{item.subtotal}}$</td>
+                  </tr>         
+                </tbody>     
+              </table> 
+             
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   

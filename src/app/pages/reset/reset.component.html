@@ -1,0 +1,27 @@
+<section class="page_header">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center"></div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="subscribe">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Recuperar</h1>
+          <p>Cambia tu contraseña.</p>
+          <form >
+            <div class="form-group">
+                <input type="password" id="newPassword" [(ngModel)]="newPassword"  class="form-control" placeholder="Nueva Contraseña">
+            </div>
+            <button (click)="resetPassword()" class="btn btn-default">
+              <i class="fa fa-angle-right"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  
