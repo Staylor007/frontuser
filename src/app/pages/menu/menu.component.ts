@@ -32,7 +32,11 @@ export class MenuComponent {
   }  
 
   filterMenuItems() {
-    return this.list.filter(item => item.estado !== 'Agotado');
+    if (this.currentState === 'All') {
+      return this.list; // Display all items
+    } else {
+      return this.list.filter(item => item.nombre_menu === this.currentState);
+    }
   } 
 
   addToCart(menu: Menu) {
